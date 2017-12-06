@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-
+var cors = require('cors')
 // Mongoose ODM...
 var mongoose = require('mongoose');
 
@@ -14,7 +14,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://demo:csc3036776@ds159235.mlab.com:59235/classes');
 
 var app = express();
-
+app.use(cors())
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
